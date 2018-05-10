@@ -31,9 +31,7 @@ class EditModal extends Component {
 		
 	// }
 	componentWillReceiveProps(nextprops) {
-		if(nextprops.editedMenuItem === [] ) {
-
-		} else {
+		if(nextprops.editedMenuItem.name) {
 			this.setState({
 				nameinputVal: nextprops.editedMenuItem.name,
 				descriptioninputValue: nextprops.editedMenuItem.description,
@@ -43,7 +41,7 @@ class EditModal extends Component {
 	}
 	handleSubmit = (e) => {
 		e.preventDefault()
-
+ 
 		this.props.editMenuItem(this.state.nameinputVal, this.state.descriptioninputValue, this.state.priceinputValue, this.props.editedMenuItem.id)
 		
 	}
@@ -56,13 +54,13 @@ class EditModal extends Component {
 			<div className={cssClass}>
 				<input type="text" 
 					value={this.state.nameinputVal}
-					onChange={(e) => this.setState({ nameinputVal: e.target.value})}/>
+					onChange={(e) => this.setState({nameinputVal: e.target.value})}/>
 				<input type="text"	
-				value={this.state.descriptioninputValue} 
-				onChange={(e) => this.setState({descriptioninputValue: e.target.value})} />
+					value={this.state.descriptioninputValue} 
+					onChange={(e) => this.setState({descriptioninputValue: e.target.value})} />
 				<input type="text"	
-				value={this.state.priceinputValue} 
-				onChange={(e) => this.setState({priceinputValue: e.target.value})}  />
+					value={this.state.priceinputValue} 
+					onChange={(e) => this.setState({priceinputValue: e.target.value})}  />
 				<button onClick={this.handleSubmit}>Edit</button>
 			</div>
 

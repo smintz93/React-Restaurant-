@@ -20,6 +20,7 @@ class CreateMenuItem extends Component {
 	}
 	handleSubmit = (e) => {
 		e.preventDefault()
+
 		console.log(this.state, "<------ this is state")
 		this.props.createMenuItem(this.state.name, this.state.description, this.state.price)
 	}
@@ -31,7 +32,7 @@ class CreateMenuItem extends Component {
 				<input type="text" name="description" onChange={this.updateMenuItem}/>
 				<input type="text" name="price" onChange={this.updateMenuItem}/>
 
-				<button type="submit">Add Item</button>
+				<button type="submit">Add Menu Item</button>
 			</form>
 
 
